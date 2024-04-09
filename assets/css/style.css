@@ -8,7 +8,7 @@
 }
 html {
     font-size: 62.5%;
-    height: 5000px;
+
     scroll-behavior: smooth;
 }
 
@@ -16,6 +16,7 @@ body {
     font-size: 1.6rem;
     font-family: "Poppins", sans-serif;
     background: #fffaf5;
+    height: 50000px;
 }
 
 h1,
@@ -44,7 +45,9 @@ a {
     max-width: calc(100% - 48px);
     margin: 0 auto;
 }
-
+.container__small {
+    width: 994px;
+}
 .btn {
     --height: 56px;
     display: inline-flex;
@@ -59,11 +62,12 @@ a {
     text-align: center;
     font-size: 1.4rem;
     font-weight: 600;
+    cursor: pointer;
 }
 .btn__primary {
     color: #fff !important;
-    background: var(--btn-color);
-    border-color: var(--btn-color);
+    background: var(--btn-color) !important;
+    border-color: var(--btn-color) !important;
 }
 .btn:hover {
     opacity: 0.9;
@@ -658,7 +662,7 @@ a {
 
 .service__btn {
     min-width: 214px;
-    border-color: var(--btn-color);
+    border-color: rgb(255, 153, 122, 0.6);
     color: var(--btn-color);
     transition: 0.25s ease-out;
 }
@@ -741,7 +745,7 @@ a {
     width: 100%;
     z-index: 1;
     display: block;
-    border-radius: 130px;
+    border-radius: inherit;
 }
 
 .staff__item-title {
@@ -767,7 +771,154 @@ a {
 
 .staff__btn {
     min-width: 193px;
-    border-color: var(--btn-color);
+    border-color: rgb(255, 153, 122, 0.6);
     color: var(--btn-color);
     transition: 0.25s ease-out;
+}
+
+/* PRICING */
+.pricing {
+    padding: 86px 0;
+    background: #fff6ed;
+}
+
+.pricing__heading,
+.pricing__desc {
+    text-align: center;
+}
+
+.pricing__desc {
+    width: 710px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pricing__switch-wrap {
+    margin-top: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pricing__switch-inner {
+    position: relative;
+}
+.pricing__switch {
+}
+
+.pricing__switch-label {
+    position: relative;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 276px;
+    height: 56px;
+    border-radius: 99px;
+    border: 1px solid #ff5b2e99;
+    user-select: none;
+}
+
+.pricing__switch-label::before {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 140px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: inherit;
+    background: #ff5b2e;
+    transition: ease 0.3s;
+}
+
+.pricing__switch-value {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1; /* 100% */
+}
+
+.pricing__switch-input:checked + .pricing__switch-label::before {
+    left: 100%;
+    transform: translateX(-100%);
+    width: 131px;
+}
+.pricing__switch-input:not(:checked)
+    + .pricing__switch-label
+    .pricing__switch-value:nth-of-type(2),
+.pricing__switch-input:checked
+    + .pricing__switch-label
+    .pricing__switch-value:nth-of-type(1) {
+    color: #ff5b2e;
+}
+
+.pricing__switch-decor {
+    position: absolute;
+    top: -22px;
+    right: -120px;
+}
+
+.pricing__list {
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 44px;
+}
+
+.pricing__item {
+    padding: 30px 28px;
+    border-radius: 20px;
+    background: #fff;
+}
+
+.pricing__item-type {
+    color: #ff5b2e;
+    font-size: 1.3rem;
+    line-height: 1; /* 100% */
+}
+
+.pricing__item-heading {
+    margin-top: 8px;
+    color: #3f4065;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1; /* 100% */
+}
+
+.pricing__item-price {
+    margin-top: 24px;
+    color: var(--primary-color);
+    font-family: Sora;
+    font-size: 3.3rem;
+    font-weight: 700;
+    line-height: 1.03; /* 103.03% */
+}
+
+.pricing__item-btn {
+    margin-top: 22px;
+    --height: 44px;
+    width: 100%;
+    background: transparent;
+    color: var(--btn-color);
+    border: 1px solid rgba(255, 91, 46, 0.6);
+}
+
+.pricing__item-list {
+    margin-top: 24px;
+}
+
+.pricing__item-item {
+    display: flex;
+    align-items: center;
+    margin-top: 18px;
+    color: #656689;
+    font-size: 1.4rem;
+    line-height: 1; /* 100% */
+}
+
+.pricing__item-item::before {
+    margin-right: 12px;
+    content: url(../SVG/price__check.svg);
 }
